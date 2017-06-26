@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Friend Finder | Survey </title>
+	</head>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<body>
+
+		<div class="container">
+			<div class="jumbotron">
+				<h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Survey Questions <span class="glyphicon glyphicon-fire"></span></h1>
+			</div>	
+			<hr>
+			<h2 class="text-center"><strong> About You </strong></h2>
+			<hr>
+			<br>
+			<div class="form-group">
+    			<h4> Name (required) </h4>
+    			<input type="name" class="form-control" id="userName" placeholder="Name">
+  			</div>
+  			<div class="form-group">
+    			<h4> Link to photo image (required) </h4>
+    			<input type="img" class="form-control" id="userImage" placeholder="Upload you photo here!">
+  			</div>
+		</div>
+		<div class="col-sm-1"></div><!-- spacer -->
+		<div class="col-sm-10">
+			<div class="panel panel-default" style=" padding:3%;">
+
+				<h4> Do you see yourself as an emotional person? </h4>
+				<li><input type="radio" name="quest1" value="1"> Nah, whatever forver </li>
+				<li><input type="radio" name="quest1" value="2"> 2 </li>
+				<li><input type="radio" name="quest1" value="3"> 3 </li>
+				<li><input type="radio" name="quest1" value="4"> 4 </li>
+				<li><input type="radio" name="quest1" value="5"> My life is an emotional roller coaster </li>
+
+				<br><br>
+
+				<h4> Do you like to read? </h4>
+				<li><input type="radio" name="quest2" value="1"> Readin iz 4 chumpz </li>
+				<li><input type="radio" name="quest2" value="2"> 2 </li>
+				<li><input type="radio" name="quest2" value="3"> 3 </li>
+				<li><input type="radio" name="quest2" value="4"> 4 </li>
+				<li><input type="radio" name="quest2" value="5"> Im a lil bookworm </li>
+
+				<br><br>
+
+				<h4> How much do you like being outdoors? </h4>
+				<li><input type="radio" name="quest3" value="1"> I'm basically a hermit crab... </li>
+				<li><input type="radio" name="quest3" value="2"> 2 </li>
+				<li><input type="radio" name="quest3" value="3"> 3 </li>
+				<li><input type="radio" name="quest3" value="4"> 4 </li>
+				<li><input type="radio" name="quest3" value="5"> I may as well be Mowgli! </li>
+
+				<br><br>
+
+				<h4> Your pull up to a social situation by yourself, how likely are you to immeditely mingle with a crowd? </h4>
+				<li><input type="radio" name="quest4" value="1"> What are social situations? </li>
+				<li><input type="radio" name="quest4" value="2"> 2 </li>
+				<li><input type="radio" name="quest4" value="3"> 3 </li>
+				<li><input type="radio" name="quest4" value="4"> 4 </li>
+				<li><input type="radio" name="quest4" value="5"> I'm in there like swimwear. </li>
+				<br><br>
+
+				<h4> Do you like to travel? </h4>
+				<li><input type="radio" name="quest5" value="1"> Yeah, sometimes I travel out of my house... </li>
+				<li><input type="radio" name="quest5" value="2"> 2 </li>
+				<li><input type="radio" name="quest5" value="3"> 3 </li>
+				<li><input type="radio" name="quest5" value="4"> 4 </li>
+				<li><input type="radio" name="quest5" value="5"> Total nomad. </li>
+
+				<br><br>
+
+				<h4> What is your political stance?  </h4>
+				<li><input type="radio" name="quest6" value="1"> The most liberal Democrat. </li>
+				<li><input type="radio" name="quest6" value="2"> 2 </li>
+				<li><input type="radio" name="quest6" value="3"> 3 </li>
+				<li><input type="radio" name="quest6" value="4"> 4 </li>
+				<li><input type="radio" name="quest6" value="5"> The most conservative Republican. </li>
+
+				<br><br>
+
+				<h4>How active are you generally on social media?</h4>
+				<li><input type="radio" name="quest8" value="1"> I think I had a myspace once? </li>
+				<li><input type="radio" name="quest8" value="2"> 2 </li> 
+				<li><input type="radio" name="quest8" value="3"> 3 </li>
+				<li><input type="radio" name="quest8" value="4"> 4 </li> 
+				<li><input type="radio" name="quest8" value="5"> Sorry, Im too busy on social media to answer this question. </li>
+
+				<br><br>
+				
+				<h4> How into sports are you? </h4>
+				<li><input type="radio" name="quest7" value="1"> meh... </li>
+				<li><input type="radio" name="quest7" value="2"> 2 </li>
+				<li><input type="radio" name="quest7" value="3"> 3 </li>
+				<li><input type="radio" name="quest7" value="4"> 4 </li>
+				<li><input type="radio" name="quest7" value="5"> DIE HARD FAN. </li>
+
+				<br><br>
+
+				<h4> Are you much of a drinker? </h4>
+				<li><input type="radio" name="quest9" value="1"> I mean, I drink water... </li>
+				<li><input type="radio" name="quest9" value="2"> 2 </li>
+				<li><input type="radio" name="quest9" value="3"> 3 </li>
+				<li><input type="radio" name="quest9" value="4"> 4 </li>
+				<li><input type="radio" name="quest9" value="5"> * GULP GULP GULP * </li>
+
+				<br><br>
+
+				<h4> How acive would you say you are? </h4>
+
+				<li><input type="radio" name="quest10" value="1"> As little as possible please </li>
+				<li><input type="radio" name="quest10" value="2"> 2 </li>
+				<li><input type="radio" name="quest10" value="3"> 3 </li> 
+				<li><input type="radio" name="quest10" value="4"> 4 </li> 
+				<li><input type="radio" name="quest10" value="5"> An object in motion remains in motion! </li>
+				<br><br>
+
+				<!-- Submit Button -->
+				<button type="submit" class="btn btn-primary btn-lg" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
+			</div><!-- END panel panel-default -->
+		</div><!-- END col-sm-10 -->
+		<div class="col-sm-1"></div><!-- spacer -->
+		
+
+	<script src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../surveyScript.js"></script>
+	</body>
+
+</html>
