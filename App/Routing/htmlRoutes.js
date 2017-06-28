@@ -5,13 +5,13 @@ module.exports = function changePages(app) {
 
 	app.get("/survey", function(req, res) {
 
-		res.sendFile(path.join(__dirname + "/../survey.html"));
+		res.sendFile(path.join(__dirname + "/../Public/survey.html"));
 	});
 
 	// if it cant find anything it will direct to the homepage. 
 	app.use(function(req, res) {
 
-		res.sendFile(path.join(__dirname + "/../home.html"));
+		res.sendFile(path.join(__dirname + "/../Public/home.html"));
 	});
 
 }

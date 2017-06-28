@@ -1,12 +1,13 @@
 // Globals
 var express = require("express");
+var bodyParser = require('body-parser');
 var app = express ();
 var PORT = process.env.PORT || 3000;
 
-require('./app/routing/api-routes.js')(app);
+require('../App/Routing/apiRoutes.js')(app);
 
 // grabs the exported html route when the customer changes pages
-require('./app/routing/html-routes.js')(app);
+require('../App/Routing/htmlRoutes.js')(app);
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
