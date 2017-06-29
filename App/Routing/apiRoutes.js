@@ -1,5 +1,4 @@
-// LOOK INTO: https://github.com/lvanok/FriendFinder
-// ALSO: https://github.com/lvanok/FriendFinder/blob/master/app/routing/api-routes.js
+
 var express = require("express");
 var friendData = require("../Data/friends.js");
 var path = require("path");
