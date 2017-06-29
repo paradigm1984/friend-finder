@@ -33,7 +33,7 @@
 				
 				<div class="form-group">
 				<label> You see yourself as an emotional person. </label>
-				<select class="form-control" id="question1">
+				<select class="form-control" id="question01">
 					<option>1 (strongly disagree)</option>
 					<option>2</option>
 					<option>3</option>
@@ -46,7 +46,7 @@
 
 				<div class="form-group">
 				<label> You are a fan of reading. </label>
-				<select class="form-control" id="question2">
+				<select class="form-control" id="question02">
 					<option>1 (strongly disagree)</option>
 					<option>2</option>
 					<option>3</option>
@@ -59,7 +59,7 @@
 				
 				<div class="form-group">
 				<label> You love being outdoors. </label>
-				<select class="form-control" id="question3">
+				<select class="form-control" id="question03">
 					<option>1 (strongly disagree)</option>
 					<option>2</option>
 					<option>3</option>
@@ -72,7 +72,7 @@
 
 				<div class="form-group">
 				<label> You're quick to make friends. </label>
-				<select class="form-control" id="question4">
+				<select class="form-control" id="question04">
 					<option>1 (strongly disagree)</option>
 					<option>2</option>
 					<option>3</option>
@@ -85,7 +85,7 @@
 
 				<div class="form-group">
 				<label> You like to travel. </label>
-				<select class="form-control" id="question5">
+				<select class="form-control" id="question05">
 					<option>1 (strongly disagree)</option>
 					<option>2</option>
 					<option>3</option>
@@ -98,7 +98,7 @@
 
 				<div class="form-group">
 				<label> You consider yourself politically active. </label>
-				<select class="form-control" id="question6">
+				<select class="form-control" id="question06">
 					<option>1 (strongly disagree)</option>
 					<option>2</option>
 					<option>3</option>
@@ -111,7 +111,7 @@
 
 				<div class="form-group">
 				<label> You are an active internat user. </label>
-				<select class="form-control" id="question7">
+				<select class="form-control" id="question07">
 					<option>1 (strongly disagree)</option>
 					<option>2</option>
 					<option>3</option>
@@ -124,7 +124,7 @@
 
 				<div class="form-group">
 				<label> You are into sports. </label>
-				<select class="form-control" id="question8">
+				<select class="form-control" id="question08">
 					<option>1 (strongly disagree)</option>
 					<option>2</option>
 					<option>3</option>
@@ -137,7 +137,7 @@
 
 				<div class="form-group">
 				<label> You are a drinker. </label>
-				<select class="form-control" id="question9">
+				<select class="form-control" id="question09">
 					<option>1 (strongly disagree)</option>
 					<option>2</option>
 					<option>3</option>
@@ -214,50 +214,61 @@
 					  	$('.form-control').each(function() {
 					    	if ( $(this).val() === '' )
 					        isValid = false;
-					  });
+					  	});
 
-					  $('.chosen-select').each(function() {
-					  	if( $(this).val() === "")
+					  	$('.chosen-select').each(function() {
+					  		if( $(this).val() === "")
 					  		isValid = false
-					  })
-					  return isValid;
-					}
+					  	})
+					  	return isValid;
+					}// validateForm() 	
+				
 					// If all required fields are filled
 					if (validateForm() == true) {
-					// puts the user input into an object
-						var userInput = {
 
-							name: $("#userName").val(),
-							photo: $("#userImage").val(),
-							scores: [$('#question01').val(), $('#question02').val(), $('#question03').val(), $('#question04').val(), $('#question05').val(), $('#question06').val(), $('#question07').val(), $('#question08').val(), $('#question09').val(), $('#question10').val()]
-						}
+					// puts the user input into an object
+					var userInput = {
+
+						name: $("#userName").val(),
+						photo: $("#userImage").val(),
+						scores: [$('#question01').val(), $('#question02').val(), $('#question03').val(), $('#question04').val(), $('#question05').val(), $('#question06').val(), $('#question07').val(), $('#question08').val(), $('#question09').val(), $('#question10').val()]
+					}
 
 					// puts the current url into a variable
 					var currentURL = window.location.origin;
 
+					console.log(userInput);
 					// uses jquery to make a post request
 					$.post(currentURL + "/api/friends", userInput, function(data) {
 
 						$("#userName").text(data.name);
 						$("#userImage").attr("src", data.photo);
 						// having trouble with the modals
-						$("#bestFriendModal").modal("toggle");
+						// $("#bestFriendModal").modal("toggle");
 						console.log("posted!");
 					});
 
-					return false;
-				// if validateForm() == true
-				} else {
-					$.post(currentURL + "/api/friends", userInput, function(data) {
+					// return false;
+					} else {
 
-						console.log("not all selected");
-						// having trouble with the modals
-						$("#emptyModal").modal("toggle");
-					});	
-				}
+						var userInput = {
 
-				}); // submitRequest on click
-			}); //document.ready
+						name: $("#userName").val(),
+						photo: $("#userImage").val(),
+						scores: [$('#question01').val(), $('#question02').val(), $('#question03').val(), $('#question04').val(), $('#question05').val(), $('#question06').val(), $('#question07').val(), $('#question08').val(), $('#question09').val(), $('#question10').val()]
+						}
+
+						console.log(userInput);
+
+						$.post(currentURL + "/api/friends", userInput, function(data) {
+
+							console.log("not all selected!!!!!");
+							// having trouble with the modals
+							$("#emptyModal").modal("toggle");
+						});	
+					}
+			}); // submitRequest on click
+		}); //document.ready
 
 		</script>
 	</body>

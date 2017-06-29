@@ -1,28 +1,28 @@
 
-var express = require("express");
 var friendData = require("../Data/friends.js");
 var path = require("path");
 
+
 module.exports = function(app) {
 
+	// this populates the localhost:3000/api/friends
 	app.get("/api/friends", function(req, res){
-		res.json(friends);
+		res.json(friendData);
 	});
 
-	app.post('/api/friends', function(req, res){
+	app.post("/api/friends", function(req, res){
 
-		var userInput = req.body;
-		var userResponses = userInput.scores;
+		// an object for a good match starting empty
+		var goodMatch = {
+			name: "",
+			image: "",
+			matchDifference: 500
+		};
 
-		var matchName = "";
-		var matchImage = "";
-		var totalDifference = 5000; // Make the initial value big for comparison
+		console.log(req.body);
+		var userData = req.body;
 
-		for (var i = 0; i < friends.length; i++) {
-			console.log('friend = ' + JSON.stringify(friends[i]));
 
-		
-		}
 
 	});
 
