@@ -165,7 +165,14 @@
 			</div><!-- END panel panel-default -->
 		</div><!-- END col-sm-10 -->
 		<div class="col-sm-1"></div><!-- spacer -->
-
+		
+		<footer class="footer">
+ 			<div class="container">
+   				<p>Control Panel</p>
+   				<p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/paradigm1984/friend-finder/tree/master/App">Github Repo</a> | <a href="/home">Home</a> </p>
+  			</div>
+ 		</footer>
+	
 		<div id="bestFriendModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -177,54 +184,19 @@
 					<h2 id="userName"></h2>
 					<img id="userImage" src="" width=500px alt="Best Friend">
 				</div><!-- END modal-content -->
+				<div class="modal-footer">
+	        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	      		</div>
 			</div>
 		</div><!-- END bestFriendModal -->
-
-		<div id="emptyModal" class="modal fade" role="dialog">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">X</button>
-						<h2 class="modal-title"> Oops, looks like you left something blank! </h2>
-					</div>
-				</div><!-- END modal-content -->
-			</div>
-		</div><!-- END emptyModal -->
-		<footer class="footer">
- 			<div class="container">
-   				<p>Control Panel</p>
-   				<p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/paradigm1984/friend-finder/tree/master/App">Github Repo</a> | <a href="/home">Home</a> </p>
-  			</div>
- 		</footer>
+	
 
 		<script>
-			
-			$(document).ready(function() {
 
 				// on submit, make the modal appear with the name and photo of your best match.
 				$("#submitRequest").on("click", function() {
 
 					console.log("requested!!");
-
-					// Form validation
-			    	function validateForm() {
-
-						var isValid = true;
-
-					  	$('.form-control').each(function() {
-					    	if ( $(this).val() === '' )
-					        isValid = false;
-					  	});
-
-					  	$('.chosen-select').each(function() {
-					  		if( $(this).val() === "")
-					  		isValid = false
-					  	})
-					  	return isValid;
-					}// validateForm() 	
-				
-					// If all required fields are filled
-					if (validateForm() == true) {
 
 					// puts the user input into an object
 					var userInput = {
@@ -237,38 +209,20 @@
 					// puts the current url into a variable
 					var currentURL = window.location.origin;
 
-					console.log(userInput);
+					console.log("user input: " + userInput);
 					// uses jquery to make a post request
 					$.post(currentURL + "/api/friends", userInput, function(data) {
 
 						$("#userName").text(data.name);
 						$("#userImage").attr("src", data.photo);
 						// having trouble with the modals
-						// $("#bestFriendModal").modal("toggle");
+						$("#bestFriendModal").modal("toggle");
 						console.log("posted!");
-					});
+					}); 
 
-					// return false;
-					} else {
+					return false;
+				}); // submitRequest on click
 
-						var userInput = {
-
-						name: $("#userName").val(),
-						photo: $("#userImage").val(),
-						scores: [$('#question01').val(), $('#question02').val(), $('#question03').val(), $('#question04').val(), $('#question05').val(), $('#question06').val(), $('#question07').val(), $('#question08').val(), $('#question09').val(), $('#question10').val()]
-						}
-
-						console.log(userInput);
-
-						$.post(currentURL + "/api/friends", userInput, function(data) {
-
-							console.log("not all selected!!!!!");
-							// having trouble with the modals
-							$("#emptyModal").modal("toggle");
-						});	
-					}
-			}); // submitRequest on click
-		}); //document.ready
 
 		</script>
 	</body>
