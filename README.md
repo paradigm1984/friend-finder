@@ -6,10 +6,6 @@ submits his or her answers, it is cross compared with arrays of other users' ans
 
 ### Functionality:
 
-### Link:
-
-https://paradigm1984.github.io/burger/
-
 ### Technologies used:
 1. HTML
 2. CSS
